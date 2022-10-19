@@ -37,5 +37,18 @@
         <a href="room_2.html"><button class="btn">Enter Room 2</button></a>
         <a href="room_3.html"><button class="btn">Enter Room 3</button></a>
     </div>
+    <div>
+        <p id="token"></p>
+        <a href="http://127.0.0.1:8000/gettoken"><button class="btn">Enter Room 1</button></a>
+    </div>
+
+    <script>
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+        console.log(params);
+
+        // document.getElementById("token").innerText
+    </script>
 </body>
 </html>
