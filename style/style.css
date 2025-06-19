@@ -1,0 +1,203 @@
+:root {
+    --backgroundSize:       200px 180px;
+    --contentWidth:         80vw;
+    --contentHeight:        70vh;
+    --contentMinWidth:      400px;
+    --contentMaxWidth:      900px;
+    --cubeTravelHigh:       200px;
+}
+
+body {  
+    font-family:            "Pixelify Sans", sans-serif;
+    background-image:       url("../assets/background_tile.png");
+    background-size:        var(--backgroundSize);
+    animation:              backgroundAnimation 5s linear infinite;
+    overflow:               hidden;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position:    0 0;
+    }
+    100% {
+        background-position:    var(--backgroundSize);
+    }
+}
+/* <============================================================================> */
+
+
+
+/* <===Main Card===> */
+.cardWrapper {
+    width:                  auto;
+    height:                 var(--contentHeight);
+    display:                flex;
+    justify-content:        center;
+    margin-top:             5vh;
+}
+
+.containerCard {
+    width:                  var(--contentWidth);
+    max-width:              var(--contentMaxWidth);
+    min-width:              var(--contentMinWidth);
+    height:                 var(--contentHeight);
+    background-image:       url("../assets/container_card.png");
+    background-size:        100% 100%;
+    position:               absolute;
+}
+
+.animateSlideInCard {
+    animation:              cardAnimation 1.5s ease-out forwards;
+}
+
+.animateSlideOutCard {
+    animation:              cardAnimation 1.5s ease-in reverse forwards;
+}
+
+@keyframes cardAnimation {
+    0% {
+        transform:          translateY(-100vh);
+    }
+    80% {
+        transform:          translateY(20px);
+    }
+    100% {
+        transform:          translateY(0);
+    }
+}
+/* <============================================================================> */
+
+
+
+
+/* <===Navigation Buttons===> */
+.buttonWrapper {
+    width:                  100vw;
+    display:                flex;
+    justify-content:        center;
+    align-items:            center;
+    position:               absolute;
+    top:                    80vh;
+}
+
+.buttonContainer {
+    width:                  var(--contentWidth);
+    max-width:              var(--contentMaxWidth);
+    min-width:              var(--contentMinWidth);
+    height:                 80px;
+    display:                flex;
+    justify-content:        space-around;
+    align-items:            center;
+    /* background-color: white; */
+}
+
+.buttonBig {
+    width:                  150px;
+    height:                 80px;
+    background-image:       url("../assets/button_big.png");
+    background-size:        100% 100%;
+    filter:                 hue-rotate(-25deg);
+    align-items:            center;
+    display:                flex;
+    justify-content:        center;
+    opacity:                0.0;
+    color:                  white;
+}
+
+.buttonBig:hover {
+    color:                  #FFFA70;
+    background-image:       url("../assets/button_big_pressed.png");
+}
+
+.buttonBigText {
+    font-size:              1rem;
+    font-weight:            bold;
+    text-transform:         uppercase;
+    letter-spacing:         1px;
+    text-shadow:            0px 3px 0px rgba(0, 0, 0, 1);
+    margin-bottom:          40px;
+}
+
+.buttonBig:hover .buttonBigText {
+    margin-top: 30px;
+}
+
+.buttonAboutme { 
+    animation:              buttonTextAnimation 1s ease-out forwards; 
+}
+
+.buttonExperience { 
+    animation:              buttonTextAnimation 1s ease-out 0.1s forwards; 
+}
+
+.buttonProjects {
+    animation:              buttonTextAnimation 1s ease-out 0.2s forwards; 
+}
+
+.buttonContact { 
+    animation:              buttonTextAnimation 1s ease-out 0.3s forwards; 
+}
+
+@keyframes buttonTextAnimation {
+    0% {
+        transform:          translateY(150vh);
+        opacity:            1;
+    }
+    80% {
+        transform:          translateY(-10px);
+        opacity:            1;
+    }
+    100% {
+        transform:          translateY(0);
+        opacity:            1;
+    }
+}
+/* <============================================================================> */
+
+
+
+
+/* <===Introduction===> */
+.introductionWrapper {
+    width:                  100%;
+    height:                 100%;
+    display:                flex;
+    justify-content:        center;
+    align-items:            center;
+    position:               absolute;
+    padding:                5%;
+    box-sizing:             border-box;
+}
+
+.introductionTextWrapper {
+    height:                 100%;
+    flex:                   2;
+    display:                flex;
+    flex-direction:         column;
+    align-items:            start;
+    justify-content:        center;
+}
+
+.introductionHeader {
+    font-size:              2rem;
+    font-weight:            bold;
+    margin: 0;
+}
+.introductionDescription {
+    font-size: 1rem;
+    margin-top:             0.5rem;
+    text-align:             justify;
+}
+
+.introductionImageWrapper {
+    height:                 100%;
+    display:                flex;
+    align-items:            center;
+    justify-content:        center;
+    flex:                   1;
+}
+
+.pixelMeImage {
+    width:                  220px;
+    height:                 350px;
+}
