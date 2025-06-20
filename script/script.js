@@ -43,13 +43,11 @@ function changePage(selectedPageId) {
 
     // Hide the current page after the animation ends
     setTimeout(() => {
-
         // to fix the problem of clicking back to previous page before the animation ends 
         // that would cause the current page to dispear
         if(currentPageId === currentPageIdValue) return;
-
+        
         document.getElementById(currentPageIdValue).style.display = "none";
-        console.log("display none", currentPageIdValue);
     }, 1500);
 
     currentPageId = selectedPageId;
