@@ -37,10 +37,17 @@ function changePage(selectedPageId) {
     document.getElementById(selectedPageIdValue).style.zIndex = "1";
     document.getElementById(selectedPageIdValue).classList.remove("animateSlideOutCard");
     document.getElementById(selectedPageIdValue).classList.add("animateSlideInCard");
-    document.getElementById(selectedPageIdValue).style.display = "block"; // The Dom will play animation by just appearing without needing for requestAnimationFrame
+
+    // The Dom will play animation by just appearing without needing for requestAnimationFrame
+    document.getElementById(selectedPageIdValue).style.display = "block";
 
     // Hide the current page after the animation ends
     setTimeout(() => {
+
+        // to fix the problem of clicking back to previous page before the animation ends 
+        // that would cause the current page to dispear
+        if(currentPageId === currentPageIdValue) return;
+
         document.getElementById(currentPageIdValue).style.display = "none";
         console.log("display none", currentPageIdValue);
     }, 1500);
